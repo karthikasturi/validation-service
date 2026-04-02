@@ -124,4 +124,3 @@ Pipeline stages in order:
 | Build Docker image | `docker build` | Only runs on green lint + tests |
 
 The Docker image is tagged with the commit SHA (`github.sha`) so every build is uniquely traceable to its source commit.
-# validation-service
