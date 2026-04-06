@@ -2,7 +2,7 @@
 # Runs on every push and pull_request targeting the main branch.
 # Pipeline stages in order: Lint → Test → Build Docker image
 
-name: CI
+name: My First CI Workflow
 
 on:
   push:
@@ -27,10 +27,10 @@ jobs:
       # actions/setup-python@v5 installs the specified Python version and
       # adds it to PATH. Must come before the pip install step — you cannot
       # install packages before the runtime exists.
-      - name: "Set up Python 3.11"
+      - name: "Set up Python 3.12"
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
 
       # Step 3: Cache pip's download cache between workflow runs.
       # actions/cache@v4 saves ~/.cache/pip to GitHub's cache storage after
