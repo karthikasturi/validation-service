@@ -31,7 +31,7 @@ def validate_input(data: dict[str, Any]) -> dict[str, Any]:
     """
     for key in ("name", "value"):
         if key not in data:
-            return {"status": "error", "message": f"Required key missing: {key}"}  # ← CONFLICT ZONE
+            return {"status": "error", "message": f"Validation error: missing key: {key}"}  # ← CONFLICT ZONE
     return {"status": "ok"}
 
 
@@ -45,8 +45,9 @@ def validate_schema(data: dict[str, Any]) -> dict[str, Any]:
         {"status": "ok"} on success.
         {"status": "error", "message": "<reason>"} on failure.
     """
-    if "value" not in data:
-        return {"status": "error", "message": "Missing key: value"}
+    for key in ("value", "category"):
+        if key not in data:
+            return {"status": "error", "message": f"Missing key: {key}"}
 
     value = data["value"]
 
