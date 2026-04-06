@@ -31,7 +31,7 @@ def validate_input(data: dict[str, Any]) -> dict[str, Any]:
     """
     for key in ("name", "value"):
         if key not in data:
-            return {"status": "error", "message": f"Missing key: {key}"}  # ← CONFLICT ZONE
+            return {"status": "error", "message": f"Required key missing: {key}"}  # ← CONFLICT ZONE
     return {"status": "ok"}
 
 
